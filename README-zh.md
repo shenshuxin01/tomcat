@@ -1,0 +1,1 @@
+首先使用ant打开项目 然后执行 ide-netbeans
