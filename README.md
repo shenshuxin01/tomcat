@@ -1,5 +1,8 @@
 ## Welcome to Apache Tomcat!
 
+### 中文说明
+[README-zh.md](README-zh.md)
+
 ### What Is It?
 
 The Apache Tomcat® software is an open source implementation of the Jakarta
