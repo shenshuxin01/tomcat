@@ -14,39 +14,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cal;
+package sessions;
 
-public class Entry {
+public enum Item {
 
-    final String hour;
-    String description;
+    VIDEO("Beavis & Butt-head Video collection"),
+    MOVIE("X-files movie"),
+    TAPES("Twin peaks tapes"),
+    CD("NIN CD"),
+    BOOK("JSP Book"),
+    TICKETS("Concert tickets");
 
-    public Entry(String hour) {
-        this.hour = hour;
-        this.description = "";
+    private final String title;
 
+    Item(String title) {
+        this.title = title;
     }
 
-    public String getHour() {
-        return this.hour;
+    public String getTitle() {
+        return title;
     }
-
-    public String getColor() {
-        if (description.equals("")) {
-            return "lightblue";
-        }
-        return "red";
-    }
-
-    public String getDescription() {
-        if (description.equals("")) {
-            return "None";
-        }
-        return this.description;
-    }
-
-    public void setDescription(String descr) {
-        description = descr;
-    }
-
 }
