@@ -281,7 +281,7 @@ public class NioEndpoint extends AbstractNetworkChannelEndpoint<NioChannel,Socke
             pollerThread.setPriority(threadPriority);
             pollerThread.setDaemon(true);
             pollerThread.start();
-
+            // Start acceptor thread
             startAcceptorThread();
         }
     }
@@ -824,7 +824,7 @@ public class NioEndpoint extends AbstractNetworkChannelEndpoint<NioChannel,Socke
                                     synchronized (socketWrapper.readLock) {
                                         socketWrapper.readBlocking = false;
                                         socketWrapper.readLock.notify();
-                                    }
+                                    }//读
                                 } else if (!processSocket(socketWrapper, SocketEvent.OPEN_READ, true)) {
                                     closeSocket = true;
                                 }
@@ -838,7 +838,7 @@ public class NioEndpoint extends AbstractNetworkChannelEndpoint<NioChannel,Socke
                                     synchronized (socketWrapper.writeLock) {
                                         socketWrapper.writeBlocking = false;
                                         socketWrapper.writeLock.notify();
-                                    }
+                                    }//写
                                 } else if (!processSocket(socketWrapper, SocketEvent.OPEN_WRITE, true)) {
                                     closeSocket = true;
                                 }
